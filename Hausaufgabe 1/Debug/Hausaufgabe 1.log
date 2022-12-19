@@ -1,0 +1,26 @@
+﻿  FormatFunctions.c
+D:\Projects\School\Programmieren\Hausaufgabe 1\FormatFunctions.c(11,24): warning C4047: 'function': 'const char *' differs in levels of indirection from 'char **'
+D:\Projects\School\Programmieren\Hausaufgabe 1\FormatFunctions.c(11,18): warning C4024: 'strcpy': different types for formal and actual parameter 2
+D:\Projects\School\Programmieren\Hausaufgabe 1\FormatFunctions.c(58,33): warning C4047: 'function': 'char **' differs in levels of indirection from 'char *'
+D:\Projects\School\Programmieren\Hausaufgabe 1\FormatFunctions.c(58,27): warning C4024: 'checkIfCorrect': different types for formal and actual parameter 1
+D:\Projects\School\Programmieren\Hausaufgabe 1\FormatFunctions.c(63,33): warning C4047: 'function': 'char **' differs in levels of indirection from 'char *'
+D:\Projects\School\Programmieren\Hausaufgabe 1\FormatFunctions.c(63,27): warning C4024: 'checkIfCorrect': different types for formal and actual parameter 1
+  OperationsnResult.c
+D:\Projects\School\Programmieren\Hausaufgabe 1\OperationsnResult.c(68,9): warning C4129: 'z': unrecognized character escape sequence
+  main.c
+D:\Projects\School\Programmieren\Hausaufgabe 1\main.c(12,17): warning C4047: 'function': 'char *' differs in levels of indirection from 'char (*)[50]'
+D:\Projects\School\Programmieren\Hausaufgabe 1\main.c(12,13): warning C4024: 'getNumbers': different types for formal and actual parameter 1
+D:\Projects\School\Programmieren\Hausaufgabe 1\main.c(12,23): warning C4047: 'function': 'char *' differs in levels of indirection from 'char (*)[50]'
+D:\Projects\School\Programmieren\Hausaufgabe 1\main.c(12,19): warning C4024: 'getNumbers': different types for formal and actual parameter 2
+D:\Projects\School\Programmieren\Hausaufgabe 1\main.c(13,20): warning C4047: 'function': 'char *' differs in levels of indirection from 'char (*)[50]'
+D:\Projects\School\Programmieren\Hausaufgabe 1\main.c(13,16): warning C4024: 'formatNumbers': different types for formal and actual parameter 1
+D:\Projects\School\Programmieren\Hausaufgabe 1\main.c(13,26): warning C4047: 'function': 'char *' differs in levels of indirection from 'char (*)[50]'
+D:\Projects\School\Programmieren\Hausaufgabe 1\main.c(13,22): warning C4024: 'formatNumbers': different types for formal and actual parameter 2
+D:\Projects\School\Programmieren\Hausaufgabe 1\main.c(13,36): warning C4047: 'function': 'c *' differs in levels of indirection from 'c (*)[3]'
+D:\Projects\School\Programmieren\Hausaufgabe 1\main.c(13,28): warning C4024: 'formatNumbers': different types for formal and actual parameter 3
+D:\Projects\School\Programmieren\Hausaufgabe 1\main.c(14,27): warning C4047: 'function': 'c *' differs in levels of indirection from 'c (*)[3]'
+D:\Projects\School\Programmieren\Hausaufgabe 1\main.c(14,19): warning C4024: 'getOperationDone': different types for formal and actual parameter 1
+D:\Projects\School\Programmieren\Hausaufgabe 1\main.c(15,26): warning C4047: 'function': 'c *' differs in levels of indirection from 'c (*)[3]'
+D:\Projects\School\Programmieren\Hausaufgabe 1\main.c(15,18): warning C4024: 'getResultFormat': different types for formal and actual parameter 1
+  Generating Code...
+  Hausaufgabe 1.vcxproj -> D:\Projects\School\Programmieren\Hausaufgabe 1\Debug\Hausaufgabe 1.exe
