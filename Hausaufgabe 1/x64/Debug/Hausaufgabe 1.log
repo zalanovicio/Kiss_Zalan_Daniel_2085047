@@ -1,0 +1,28 @@
+﻿  FormatFunctions.c
+C:\Users\za11ki4\Downloads\Kiss_Zalan_Daniel_2085047-main\Kiss_Zalan_Daniel_2085047-main\Hausaufgabe 1\FormatFunctions.c(11,24): warning C4047: "Funktion": Anzahl der Dereferenzierungen bei "const char *" und "char **" unterschiedlich
+C:\Users\za11ki4\Downloads\Kiss_Zalan_Daniel_2085047-main\Kiss_Zalan_Daniel_2085047-main\Hausaufgabe 1\FormatFunctions.c(11,18): warning C4024: "strcpy": unterschiedliche Typen für formalen und übergebenen Parameter 2
+C:\Users\za11ki4\Downloads\Kiss_Zalan_Daniel_2085047-main\Kiss_Zalan_Daniel_2085047-main\Hausaufgabe 1\FormatFunctions.c(12,15): warning C4267: "Initialisierung": Konvertierung von "size_t" nach "int", Datenverlust möglich
+C:\Users\za11ki4\Downloads\Kiss_Zalan_Daniel_2085047-main\Kiss_Zalan_Daniel_2085047-main\Hausaufgabe 1\FormatFunctions.c(58,33): warning C4047: "Funktion": Anzahl der Dereferenzierungen bei "char **" und "char *" unterschiedlich
+C:\Users\za11ki4\Downloads\Kiss_Zalan_Daniel_2085047-main\Kiss_Zalan_Daniel_2085047-main\Hausaufgabe 1\FormatFunctions.c(58,27): warning C4024: "checkIfCorrect": unterschiedliche Typen für formalen und übergebenen Parameter 1
+C:\Users\za11ki4\Downloads\Kiss_Zalan_Daniel_2085047-main\Kiss_Zalan_Daniel_2085047-main\Hausaufgabe 1\FormatFunctions.c(63,33): warning C4047: "Funktion": Anzahl der Dereferenzierungen bei "char **" und "char *" unterschiedlich
+C:\Users\za11ki4\Downloads\Kiss_Zalan_Daniel_2085047-main\Kiss_Zalan_Daniel_2085047-main\Hausaufgabe 1\FormatFunctions.c(63,27): warning C4024: "checkIfCorrect": unterschiedliche Typen für formalen und übergebenen Parameter 1
+C:\Users\za11ki4\Downloads\Kiss_Zalan_Daniel_2085047-main\Kiss_Zalan_Daniel_2085047-main\Hausaufgabe 1\FormatFunctions.c(70,16): warning C4267: "Initialisierung": Konvertierung von "size_t" nach "int", Datenverlust möglich
+C:\Users\za11ki4\Downloads\Kiss_Zalan_Daniel_2085047-main\Kiss_Zalan_Daniel_2085047-main\Hausaufgabe 1\FormatFunctions.c(71,16): warning C4267: "Initialisierung": Konvertierung von "size_t" nach "int", Datenverlust möglich
+  main.c
+C:\Users\za11ki4\Downloads\Kiss_Zalan_Daniel_2085047-main\Kiss_Zalan_Daniel_2085047-main\Hausaufgabe 1\main.c(12,17): warning C4047: "Funktion": Anzahl der Dereferenzierungen bei "char *" und "char (*)[50]" unterschiedlich
+C:\Users\za11ki4\Downloads\Kiss_Zalan_Daniel_2085047-main\Kiss_Zalan_Daniel_2085047-main\Hausaufgabe 1\main.c(12,13): warning C4024: "getNumbers": unterschiedliche Typen für formalen und übergebenen Parameter 1
+C:\Users\za11ki4\Downloads\Kiss_Zalan_Daniel_2085047-main\Kiss_Zalan_Daniel_2085047-main\Hausaufgabe 1\main.c(12,23): warning C4047: "Funktion": Anzahl der Dereferenzierungen bei "char *" und "char (*)[50]" unterschiedlich
+C:\Users\za11ki4\Downloads\Kiss_Zalan_Daniel_2085047-main\Kiss_Zalan_Daniel_2085047-main\Hausaufgabe 1\main.c(12,19): warning C4024: "getNumbers": unterschiedliche Typen für formalen und übergebenen Parameter 2
+C:\Users\za11ki4\Downloads\Kiss_Zalan_Daniel_2085047-main\Kiss_Zalan_Daniel_2085047-main\Hausaufgabe 1\main.c(13,20): warning C4047: "Funktion": Anzahl der Dereferenzierungen bei "char *" und "char (*)[50]" unterschiedlich
+C:\Users\za11ki4\Downloads\Kiss_Zalan_Daniel_2085047-main\Kiss_Zalan_Daniel_2085047-main\Hausaufgabe 1\main.c(13,16): warning C4024: "formatNumbers": unterschiedliche Typen für formalen und übergebenen Parameter 1
+C:\Users\za11ki4\Downloads\Kiss_Zalan_Daniel_2085047-main\Kiss_Zalan_Daniel_2085047-main\Hausaufgabe 1\main.c(13,26): warning C4047: "Funktion": Anzahl der Dereferenzierungen bei "char *" und "char (*)[50]" unterschiedlich
+C:\Users\za11ki4\Downloads\Kiss_Zalan_Daniel_2085047-main\Kiss_Zalan_Daniel_2085047-main\Hausaufgabe 1\main.c(13,22): warning C4024: "formatNumbers": unterschiedliche Typen für formalen und übergebenen Parameter 2
+C:\Users\za11ki4\Downloads\Kiss_Zalan_Daniel_2085047-main\Kiss_Zalan_Daniel_2085047-main\Hausaufgabe 1\main.c(13,36): warning C4047: "Funktion": Anzahl der Dereferenzierungen bei "c *" und "c (*)[3]" unterschiedlich
+C:\Users\za11ki4\Downloads\Kiss_Zalan_Daniel_2085047-main\Kiss_Zalan_Daniel_2085047-main\Hausaufgabe 1\main.c(13,28): warning C4024: "formatNumbers": unterschiedliche Typen für formalen und übergebenen Parameter 3
+C:\Users\za11ki4\Downloads\Kiss_Zalan_Daniel_2085047-main\Kiss_Zalan_Daniel_2085047-main\Hausaufgabe 1\main.c(14,27): warning C4047: "Funktion": Anzahl der Dereferenzierungen bei "c *" und "c (*)[3]" unterschiedlich
+C:\Users\za11ki4\Downloads\Kiss_Zalan_Daniel_2085047-main\Kiss_Zalan_Daniel_2085047-main\Hausaufgabe 1\main.c(14,19): warning C4024: "getOperationDone": unterschiedliche Typen für formalen und übergebenen Parameter 1
+C:\Users\za11ki4\Downloads\Kiss_Zalan_Daniel_2085047-main\Kiss_Zalan_Daniel_2085047-main\Hausaufgabe 1\main.c(15,26): warning C4047: "Funktion": Anzahl der Dereferenzierungen bei "c *" und "c (*)[3]" unterschiedlich
+C:\Users\za11ki4\Downloads\Kiss_Zalan_Daniel_2085047-main\Kiss_Zalan_Daniel_2085047-main\Hausaufgabe 1\main.c(15,18): warning C4024: "getResultFormat": unterschiedliche Typen für formalen und übergebenen Parameter 1
+  OperationsnResult.c
+  Code wird generiert...
+  Hausaufgabe 1.vcxproj -> C:\Users\za11ki4\Downloads\Kiss_Zalan_Daniel_2085047-main\Kiss_Zalan_Daniel_2085047-main\Hausaufgabe 1\x64\Debug\Hausaufgabe 1.exe

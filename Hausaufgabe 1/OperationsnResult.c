@@ -8,7 +8,7 @@
 void getOperationDone(c array[]) {
 	char operation = '0';
 	while (operation != '+' && operation != '-' && operation != '/' && operation != '*') {
-		printf("Enter the symbol of the operation you'd like to be done. ( + | - | / | * ): ");
+		printf("Enter the symbol of the operation you'd like to do. ( + | - | / | * ): ");
 		scanf(" %c", &operation);
 		if (operation != '+' && operation != '-' && operation != '/' && operation != '*') {
 			printf("There is no such operation. Enter again.\n");
