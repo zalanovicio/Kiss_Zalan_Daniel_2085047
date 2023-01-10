@@ -1,7 +1,0 @@
-*
-!.gitignore
-!functions.c
-!functions.h
-!main.c
-!newton-raphson-algorithm.c
-!newton-raphson-algorithm.h
