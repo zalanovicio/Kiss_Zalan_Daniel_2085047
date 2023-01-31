@@ -1,3 +1,4 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -46,18 +47,22 @@ void printList(listElement *start)
             i++;
             printf("\t last name: %s\n", currElem->lastName);
             printf("\t first name: %s\n", currElem->firstName);
-            printf("\t age: %d\n", currElem->age);
+            printf("\t age: %d\n\n", currElem->age);
         } while (currElem->nextElem != NULL);
     }
 }
 
 void delListElem(listElement *start)
 {
-
+    int elemdeleteindex;
+    printList(start);
+    if (start->nextElem != NULL) {
+        printf("Which element should be deleted?\n");
+        scanf("%d", &elemdeleteindex);
+    }
     /* YOUR CODE HERE */
     /* ---------------*/
 
-    printf("\n>> delListElem fcn is tbd.\n\n");
 }
 
 void delList(listElement *start)
