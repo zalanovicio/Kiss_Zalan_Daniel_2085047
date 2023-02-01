@@ -33,7 +33,7 @@ void addListElem(listElement *start)
 void printList(listElement *start)
 {
 
-    if (start->nextElem == NULL)
+    if ((start->nextElem == NULL) || (start == NULL))
         printf("List is empty.\n");
     else
     {
@@ -54,39 +54,47 @@ void printList(listElement *start)
 
 void delListElem(listElement *start)
 {
-    int position;
+    int delete_position;
+    listElement* currElem = start;
+    listElement* next;
 
     printList(start);
     if (start->nextElem != NULL) {
         printf("Which element should be deleted?\n");
-        scanf("%d", &position);
-        position++;
+        scanf("%d", &delete_position);
+        delete_position++;
     }
-    else if (position < 1 && position >(getLenOfList(start))) {
+    else {
+        printf("List is empty.\n");
+        return;
+    }
+    if ((delete_position < 1) && (delete_position > (getLenOfList(start)))) {
         printf("Position is out of bounds.\n");
         return;
     }
-    else {
-        printf("No elements in list.\n");
-        return;
-    }
 
-    listElement* temp = start;
-
-    for (int i = 0; temp != NULL && i < position - 1; i++)
-        temp = temp->nextElem;
-    if (temp == NULL || temp->nextElem == NULL)
+    for (int i = 0; currElem != NULL && i < delete_position - 1; i++)
+        currElem = currElem->nextElem;
+    if (currElem == NULL || currElem->nextElem == NULL)
         return;
 
-    listElement* next = temp->nextElem->nextElem;
+    next = currElem->nextElem->nextElem;
 
-    free(temp->nextElem);
+    free(currElem->nextElem);
 
-    temp->nextElem = next;
+    currElem->nextElem = next;
 }
 
 void delList(listElement *start)
 {
+    listElement* currElem = start;
+    listElement* next;
+    while (currElem != NULL) {
+        next = currElem->nextElem;
+        free(currElem);
+        currElem = next;
+    }
+    start->nextElem = NULL;
 
 }
 
@@ -103,13 +111,36 @@ int getLenOfList(listElement *start)
     return counter;
 }
 
-void saveList(listElement *start)
+void saveList(listElement* start)
 {
+    FILE* filePointer;
+    listElement* currElem = start;
+    char file_name[256]; //maximum characterlength for filename
+    int i = 0;
+    
+    printf("Enter the name of the file: ");
+    scanf("%s", &file_name);
+    strcat(file_name, ".txt");
 
-    /* YOUR CODE HERE */
-    /* ---------------*/
-
-    printf("\n>> saveList fcn is tbd.\n\n");
+    filePointer = fopen(file_name, "w");
+    
+    if (filePointer == NULL) {
+        printf("Failed to create file.\n");
+    }
+    else {
+        do
+        {
+            currElem = currElem->nextElem;
+            fprintf(filePointer, "%d", i);
+            i++;
+            fprintf(filePointer, "\t last name: %s\n", currElem->lastName);
+            fprintf(filePointer, "\t first name: %s\n", currElem->firstName);
+            fprintf(filePointer, "\t age: %d\n", currElem->age);
+        } while (currElem->nextElem != NULL);
+        fclose(filePointer);
+        printf("The list was saved under the filename '%s'.\n", file_name);
+    }
+    
 }
 
 void loadList(listElement *start)
