@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <dirent.h>
 #include "linkedListLib.h"
 
 void addListElem(listElement *start)
@@ -95,6 +94,7 @@ void delList(listElement *start)
         free(currElem);
         currElem = next;
     }
+    start = (listElement*)malloc(sizeof(listElement));
     start->nextElem = NULL;
 
 }
@@ -146,14 +146,6 @@ void saveList(listElement* start)
 
 void loadList(listElement *start)
 {
-
-    /* YOUR CODE HERE */
-    /* ---------------*/
-
-    printf("\n>> loadList fcn is tbd.\n\n");
-
-    printf("loading data will be append to current list...\n");
-    printList(start); // show loaded list
 }
 
 void exitFcn(listElement *start)
@@ -172,20 +164,4 @@ void stringToLower(char *string)
 {
 
     printf("\n>>stringToLower fcn is tbd.\n\n");
-}
-
-void printTxtFiles() {
-    DIR* d;
-    struct dirent* dir;
-    d = opendir(".");
-    if (d)
-    {
-        while ((dir = readdir(d)) != NULL)
-        {
-            if (strstr(dir->d_name, ".txt"))
-                printf("%s\n", dir->d_name);
-        }
-        closedir(d);
-    }
-    return 0;
 }
