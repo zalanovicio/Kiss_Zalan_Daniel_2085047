@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <dirent.h>
 #include "linkedListLib.h"
 
 void addListElem(listElement *start)
@@ -171,4 +172,20 @@ void stringToLower(char *string)
 {
 
     printf("\n>>stringToLower fcn is tbd.\n\n");
+}
+
+void printTxtFiles() {
+    DIR* d;
+    struct dirent* dir;
+    d = opendir(".");
+    if (d)
+    {
+        while ((dir = readdir(d)) != NULL)
+        {
+            if (strstr(dir->d_name, ".txt"))
+                printf("%s\n", dir->d_name);
+        }
+        closedir(d);
+    }
+    return 0;
 }
