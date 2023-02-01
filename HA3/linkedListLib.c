@@ -54,24 +54,40 @@ void printList(listElement *start)
 
 void delListElem(listElement *start)
 {
-    int elemdeleteindex;
+    int position;
+
     printList(start);
     if (start->nextElem != NULL) {
         printf("Which element should be deleted?\n");
-        scanf("%d", &elemdeleteindex);
+        scanf("%d", &position);
+        position++;
     }
-    /* YOUR CODE HERE */
-    /* ---------------*/
+    else if (position < 1 && position >(getLenOfList(start))) {
+        printf("Position is out of bounds.\n");
+        return;
+    }
+    else {
+        printf("No elements in list.\n");
+        return;
+    }
 
+    listElement* temp = start;
+
+    for (int i = 0; temp != NULL && i < position - 1; i++)
+        temp = temp->nextElem;
+    if (temp == NULL || temp->nextElem == NULL)
+        return;
+
+    listElement* next = temp->nextElem->nextElem;
+
+    free(temp->nextElem);
+
+    temp->nextElem = next;
 }
 
 void delList(listElement *start)
 {
 
-    /* YOUR CODE HERE */
-    /* ---------------*/
-
-    printf("\n>> getLenOfList fcn is tbd.\n\n");
 }
 
 int getLenOfList(listElement *start)
