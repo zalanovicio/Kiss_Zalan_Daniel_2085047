@@ -232,3 +232,45 @@ void stringToLower(char *string)
 
     printf("\n>>stringToLower fcn is tbd.\n\n");
 }
+
+
+/* #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define MAX_NAME_LENGTH 50
+
+struct Element {
+  char name1[MAX_NAME_LENGTH];
+  char name2[MAX_NAME_LENGTH];
+  int value;
+  struct Element *next;
+};
+
+void read_from_file(struct Element *head, const char *file_name) {
+  FILE *fp;
+  fp = fopen(file_name, "r");
+  if (fp == NULL) {
+    printf("Error opening file\n");
+    exit(1);
+  }
+
+  struct Element *current = head;
+  char name1[MAX_NAME_LENGTH];
+  char name2[MAX_NAME_LENGTH];
+  int value;
+  while (fscanf(fp, "%s %s %d", name1, name2, &value) == 3) {
+    while (current->next != NULL) {
+      current = current->next;
+    }
+    current->next = (struct Element *) malloc(sizeof(struct Element));
+    strcpy(current->next->name1, name1);
+    strcpy(current->next->name2, name2);
+    current->next->value = value;
+    current->next->next = NULL;
+  }
+
+  fclose(fp);
+}
+
+*/
