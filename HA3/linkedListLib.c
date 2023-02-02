@@ -4,6 +4,15 @@
 #include <string.h>
 #include "linkedListLib.h"
 
+listElement* newNode(char* name, char* lastname, int age) {
+    listElement* temp = (listElement*)malloc(sizeof(listElement));
+    strcpy(temp->firstName, name);
+    strcpy(temp->lastName, lastname);
+    temp->age = age;
+    temp->nextElem = NULL;
+    return temp;
+}
+
 void addListElem(listElement *start)
 {
 
@@ -33,7 +42,7 @@ void addListElem(listElement *start)
 void printList(listElement *start)
 {
 
-    if ((start->nextElem == NULL) || (start == NULL))
+    if ((start->nextElem == NULL))
         printf("List is empty.\n");
     else
     {
@@ -96,6 +105,7 @@ void delList(listElement *start)
     }
     start = (listElement*)malloc(sizeof(listElement));
     start->nextElem = NULL;
+    printf("The list has been deleted.\n");
 
 }
 
@@ -118,40 +128,97 @@ void saveList(listElement* start)
     listElement* currElem = start;
     char file_name[256]; //maximum characterlength for filename
     int i = 0;
-    
-    printf("Enter the name of the file: ");
-    scanf("%s", &file_name);
-    strcat(file_name, ".txt");
-
-    filePointer = fopen(file_name, "w");
-    
-    if (filePointer == NULL) {
-        printf("Failed to create file.\n");
+    if (start->nextElem == NULL) {
+        printf("The list is empty - there's nothing to be saved.\n");
     }
     else {
-        do
-        {
-            currElem = currElem->nextElem;
-            fprintf(filePointer, "%d", i);
-            i++;
-            fprintf(filePointer, "\t last name: %s\n", currElem->lastName);
-            fprintf(filePointer, "\t first name: %s\n", currElem->firstName);
-            fprintf(filePointer, "\t age: %d\n", currElem->age);
-        } while (currElem->nextElem != NULL);
-        fclose(filePointer);
-        printf("The list was saved under the filename '%s'.\n", file_name);
+        printf("Enter how you'd like to name your file: ");
+        scanf("%s", &file_name);
+        strcat(file_name, ".txt");
+
+        filePointer = fopen(file_name, "w");
+
+        if (filePointer == NULL) {
+            printf("Failed to create file.\n");
+        }
+        else {
+            do
+            {
+                currElem = currElem->nextElem;
+                fprintf(filePointer, "%s\n", currElem->lastName);
+                fprintf(filePointer, "%s\n", currElem->firstName);
+                fprintf(filePointer, "%d\n", currElem->age);
+            } while (currElem->nextElem != NULL);
+            fclose(filePointer);
+            printf("The list was saved under the filename '%s'.\n", file_name);
+        }
+
     }
     
 }
 
 void loadList(listElement *start)
 {
+    FILE* filePointer;
+    char file_name[256];
+    system("dir *.txt");
+    printf("\nWhich list would you like to load? (Only filename, without .txt): ");
+    scanf("%s", &file_name);
+
+    strcat(file_name, ".txt");
+
+    filePointer = fopen(file_name, "r");
+    if (filePointer == NULL) {
+        printf("Could not open file\n");
+        return start;
+    }
+    char firstName[50], lastName[50];
+    int age;
+
+    listElement* tail = start;
+    while (tail != NULL && tail->nextElem != NULL) {
+        tail = tail->nextElem;
+    }
+
+    while (fscanf(filePointer, "%s\n%s\n%d", lastName, firstName, &age) != EOF) {
+        listElement* temp = newNode(firstName, lastName, age);
+
+        if (start == NULL) {
+            start = tail = temp;
+        }
+        else {
+
+            tail->nextElem = temp;
+            tail = temp;
+        }
+    }
+    fclose(filePointer);
+    printList(start);
+
 }
 
-void exitFcn(listElement *start)
+void exitFcn(listElement* start)
 {
+    char answer;
+    int flag = 0;
 
-    printf("\n>> exitFcn fcn is tbd.\n\n");
+    while (flag == 0) {
+        printf("Would you like to save your list before exiting?\n('y' for yes, 'n' for no): ");
+        scanf(" %c", &answer);
+        if (answer == 'y' || answer == 'n') {
+            flag++;
+        }
+        else {
+            printf("Invalid answer.\n");
+        }
+    }
+    if (answer == 'y') {
+        saveList(start);
+    }
+    printf("Exiting the program.");
+    return;
+
+
 }
 
 void sortList(listElement *start)
