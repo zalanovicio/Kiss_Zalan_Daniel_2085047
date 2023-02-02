@@ -4,14 +4,6 @@
 #include <string.h>
 #include "linkedListLib.h"
 
-listElement* newNode(char* name, char* lastname, int age) {
-    listElement* temp = (listElement*)malloc(sizeof(listElement));
-    strcpy(temp->firstName, name);
-    strcpy(temp->lastName, lastname);
-    temp->age = age;
-    temp->nextElem = NULL;
-    return temp;
-}
 
 void addListElem(listElement *start)
 {
@@ -166,35 +158,30 @@ void loadList(listElement *start)
     scanf("%s", &file_name);
 
     strcat(file_name, ".txt");
+    printf("Loading file '%s'.:\n", file_name);
 
     filePointer = fopen(file_name, "r");
     if (filePointer == NULL) {
-        printf("Could not open file\n");
-        return start;
-    }
-    char firstName[50], lastName[50];
-    int age;
-
-    listElement* tail = start;
-    while (tail != NULL && tail->nextElem != NULL) {
-        tail = tail->nextElem;
+        printf("Error opening file\n");
+        exit(1);
     }
 
-    while (fscanf(filePointer, "%s\n%s\n%d", lastName, firstName, &age) != EOF) {
-        listElement* temp = newNode(firstName, lastName, age);
-
-        if (start == NULL) {
-            start = tail = temp;
+    listElement* current = start;
+    char lastNameCopy[50];
+    char firstNameCopy[50];
+    int ageCopy;
+    while (fscanf(filePointer, "%s %s %d", lastNameCopy, firstNameCopy, &ageCopy) == 3) {
+        while (current->nextElem != NULL) {
+            current = current->nextElem;
         }
-        else {
-
-            tail->nextElem = temp;
-            tail = temp;
-        }
+        current->nextElem = (struct Element*)malloc(sizeof(listElement));
+        strcpy(current->nextElem->lastName, lastNameCopy);
+        strcpy(current->nextElem->firstName, firstNameCopy);
+        current->nextElem->age = ageCopy;
+        current->nextElem->nextElem = NULL;
     }
+
     fclose(filePointer);
-    printList(start);
-
 }
 
 void exitFcn(listElement* start)
@@ -232,45 +219,3 @@ void stringToLower(char *string)
 
     printf("\n>>stringToLower fcn is tbd.\n\n");
 }
-
-
-/* #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-#define MAX_NAME_LENGTH 50
-
-struct Element {
-  char name1[MAX_NAME_LENGTH];
-  char name2[MAX_NAME_LENGTH];
-  int value;
-  struct Element *next;
-};
-
-void read_from_file(struct Element *head, const char *file_name) {
-  FILE *fp;
-  fp = fopen(file_name, "r");
-  if (fp == NULL) {
-    printf("Error opening file\n");
-    exit(1);
-  }
-
-  struct Element *current = head;
-  char name1[MAX_NAME_LENGTH];
-  char name2[MAX_NAME_LENGTH];
-  int value;
-  while (fscanf(fp, "%s %s %d", name1, name2, &value) == 3) {
-    while (current->next != NULL) {
-      current = current->next;
-    }
-    current->next = (struct Element *) malloc(sizeof(struct Element));
-    strcpy(current->next->name1, name1);
-    strcpy(current->next->name2, name2);
-    current->next->value = value;
-    current->next->next = NULL;
-  }
-
-  fclose(fp);
-}
-
-*/
