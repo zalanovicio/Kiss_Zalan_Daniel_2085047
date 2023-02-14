@@ -60,3 +60,15 @@ HA3/.vs/slnx.sqlite
 HA3/.vs/VSWorkspaceState.json
 HA3/.vs/HA3/FileContentIndex/cb45806d-c928-4466-9eb4-c0fffeee9c28.vsidx
 HA3/.vs/HA3/v17/ipch/AutoPCH/5ae39098cd93ac47/LINKEDLISTLIB.ipch
+*.tlog
+*.vsidx
+*.lock
+*.sln
+*.vcxproj
+*.recipe
+*.user
+*.filters
+*.log
+*.ipch
+*.db
+HA 4/Spring-Mass-Damper/.vs/Spring-Mass-Damper/v17/.suo
